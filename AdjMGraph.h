@@ -45,9 +45,9 @@ void CreatGraph(AdjMGraph *G, DataType V[], int n, RowColWeight E[],   int e) ;
 
 void DeleteEdge(AdjMGraph *G, int v1, int v2) ;
 
-//int GetFirstVex(AdjMGraph G, int v) ;
-//
-//int GetNextVex(AdjMGraph G, int v1, int v2) ;
+int GetFirstVex(AdjMGraph G, int v) ;
+
+int GetNextVex(AdjMGraph G, int v1, int v2) ;
 
 void ListInitiate(SeqList *L) ;
 
