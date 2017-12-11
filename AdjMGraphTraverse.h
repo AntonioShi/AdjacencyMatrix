@@ -59,7 +59,7 @@ void BroadFSearch(AdjMGraph G, int v, int visited[],
     SeqCQueue cqueue ;
     Visit(G.Vertices.list[v]) ;//访问v
     visited[v] = 1 ;//访问标记
-    QueueInitate(&cqueue) ;//初始化
+    QueueInitiate(&cqueue) ;
     QueueAppend(&cqueue, v) ;//添加
 
     while (QueueNotEmpty(cqueue)){//若队列非空
