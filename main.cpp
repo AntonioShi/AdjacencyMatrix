@@ -33,7 +33,7 @@ int main() {
     }
 
     printf("深度优先遍历\n") ;
-    int visit[] = {0, 0, 0, 0, 0, 0, 0, 0};
+//    int visit[] = {0, 0, 0, 0, 0, 0, 0, 0};
     DepthFirstSearch(g1, Visit) ;
     printf("\n") ;
     BroadFirstSearch(g1,Visit) ;
