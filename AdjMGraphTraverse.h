@@ -31,7 +31,7 @@ void DepthFSearch(AdjMGraph G, int v, int visited[],
 //可能存在孤立点等连通分支
 //考虑情况比较复杂
 //非连通图的深度优先 可耻的调用了连通图的深度优先访问
-void DepthFistSearch(AdjMGraph G, void Visit(DataType item)){
+void DepthFirstSearch(AdjMGraph G, void Visit(DataType item)){
     int i ;
     int *visited = (int *)malloc(sizeof(int) * G.Vertices.size) ;
 
@@ -55,7 +55,8 @@ void DepthFistSearch(AdjMGraph G, void Visit(DataType item)){
 void BroadFSearch(AdjMGraph G, int v, int visited[],
                   void Visit(DataType item)){
     //
-    int u, w ;
+    int  w ;
+    int u ;
     SeqCQueue cqueue ;
     Visit(G.Vertices.list[v]) ;//访问v
     visited[v] = 1 ;//访问标记

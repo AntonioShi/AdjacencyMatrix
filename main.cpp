@@ -1,21 +1,25 @@
 #include <iostream>
+typedef int DataType ;
 #include "AdjMGraph.h"
 #include "AdjMGraphCreate.h"
+#include "AdjMGraphTraverse.h"
 
 using namespace std ;
 
+void Visit(DataType it){
+    printf("%c ", it) ;
+}
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
     AdjMGraph g1;
-    DataType a[] = {'A','B','C','D','E'};
-    RowColWeight rcw[] =
-            {{0,1,10},{0,4,20},{1,3,30},{2,1,40},{3,2,50}};
-    int n = 5, e = 5;
+    DataType a[] = {'A','B','C','D','E','F', 'G', 'H'};
+    RowColWeight rcw[] = {{0,1,10}, {0,4,20}, {1,3,30}, {2,1,40},
+                          {3,2,50}, {1,4,30}, {2,3,40}, {3,4,50}};
+    int n = 8, e = 8;
     int i, j;
     CreatGraph(&g1, a, n, rcw, e);
-    DeleteEdge(&g1, 0, 4);
-//    DeleteVertex(&g1, 3);//删除顶点的函数
+    //DeleteEdge(&g1, 0, 4);//删除一条边
     printf("顶点集合为：");
     for(i = 0; i < g1.Vertices.size; i++)
         printf("%c   ", g1.Vertices.list[i]);
@@ -28,6 +32,11 @@ int main() {
         printf("\n");
     }
 
+    printf("深度优先遍历\n") ;
+    int visit[] = {0, 0, 0, 0, 0, 0, 0, 0};
+    DepthFirstSearch(g1, Visit) ;
+    printf("\n") ;
+    BroadFirstSearch(g1,Visit) ;
     return 0;
 }
 
